@@ -21,7 +21,7 @@ const defaultCyperConfig: ICypherConfig = {
  */
 export const cypherData = (
   data: any,
-  configObj: ICypherConfigInput | undefined
+  configObj?: ICypherConfigInput
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
@@ -44,7 +44,7 @@ export const cypherData = (
  */
 export const decypherData = (
   cypherdata: string,
-  configObj: ICypherConfigInput | undefined
+  configObj?: ICypherConfigInput
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
@@ -64,7 +64,7 @@ export const decypherData = (
 
 export const getCypherDataInitVector = (
   cypherdata: string,
-  configObj: ICypherConfigInput | undefined
+  configObj?: ICypherConfigInput
 ) => {
   const config = getCypherDataConfig(configObj);
   if (!cypherdata)
@@ -82,7 +82,7 @@ export const getCypherDataInitVector = (
 
 export const getCypherData = (
   cypherdata: string,
-  configObj: ICypherConfigInput | undefined
+  configObj?: ICypherConfigInput
 ) => {
   const config = getCypherDataConfig(configObj);
   if (!cypherdata)
@@ -98,9 +98,7 @@ export const getCypherData = (
   return splittedCypherData[1];
 };
 
-const getCypherDataConfig = (
-  configObj: ICypherConfigInput | undefined
-): ICypherConfig => {
+const getCypherDataConfig = (configObj?: ICypherConfigInput): ICypherConfig => {
   return <ICypherConfig>{
     algorithm: configObj?.algorithm || defaultCyperConfig.algorithm,
     bufferEncoding:
