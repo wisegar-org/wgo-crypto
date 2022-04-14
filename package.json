@@ -1,5 +1,5 @@
 {
-  "name": "wgo-template-module",
+  "name": "@wiseagr-org/wgo-crypto",
   "version": "0.0.1-build.0",
   "description": "WGO Module Template",
   "main": "build/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wisegar-org/wgo-template-module.git"
+    "url": "git+https://github.com/wisegar-org/wgo-crypto.git"
   },
   "keywords": [
     "wisegar",
@@ -22,9 +22,9 @@
   "author": "Wisegar.org Development Group",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wisegar-org/wgo-template-module/issues"
+    "url": "https://github.com/wisegar-org/wgo-crypto/issues"
   },
-  "homepage": "https://github.com/wisegar-org/wgo-template-module#readme",
+  "homepage": "https://github.com/wisegar-org/wgo-crypto#readme",
   "devDependencies": {
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
