@@ -21,7 +21,7 @@ const defaultCyperConfig: ICypherConfig = {
  */
 export const cypherData = (
   data: any,
-  configObj?: ICypherConfigInput
+  configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
@@ -44,7 +44,7 @@ export const cypherData = (
  */
 export const decypherData = (
   cypherdata: string,
-  configObj?: ICypherConfigInput
+  configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
@@ -64,7 +64,7 @@ export const decypherData = (
 
 export const getCypherDataInitVector = (
   cypherdata: string,
-  configObj?: ICypherConfigInput
+  configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ) => {
   const config = getCypherDataConfig(configObj);
   if (!cypherdata)
@@ -82,7 +82,7 @@ export const getCypherDataInitVector = (
 
 export const getCypherData = (
   cypherdata: string,
-  configObj?: ICypherConfigInput
+  configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ) => {
   const config = getCypherDataConfig(configObj);
   if (!cypherdata)
