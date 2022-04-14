@@ -19,9 +19,19 @@ const defaultCyperConfig: ICypherConfig = {
  * @param data Can be any base object ex. {userid: 1, expiration: '2234556', sessionid: 'nwljkcnlndclwnwle'}
  * @returns string
  */
-export const cypherData = (
+export const cypherData = (data: any): string => {
+  return cypherDataByConfig(data);
+};
+
+/**
+ * Data cypher
+ * @param data Can be any base object ex. {userid: 1, expiration: '2234556', sessionid: 'nwljkcnlndclwnwle'}
+ * @param configObj Can be an ICypherConfigInput
+ * @returns string
+ */
+export const cypherDataByConfig = (
   data: any,
-  configObj: ICypherConfigInput | undefined = defaultCyperConfig
+  configObj: ICypherConfigInput = defaultCyperConfig
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
@@ -42,16 +52,26 @@ export const cypherData = (
  * @param cypherdata Most a already cyphered data
  * @returns json data object
  */
-export const decypherData = (
+export const decypherData = (cypherdata: string): string => {
+  return decypherDataByConfig(cypherdata);
+};
+
+/**
+ * Data decypher
+ * @param cypherdata Most a already cyphered data
+ * @param configObj Can be an ICypherConfigInput
+ * @returns json data object
+ */
+export const decypherDataByConfig = (
   cypherdata: string,
   configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ): string => {
   const config = getCypherDataConfig(configObj);
   const cypherKey = GetCypherKey();
   const keyBuffer = Buffer.from(cypherKey, config.bufferEncoding);
-  const initVectorToken = getCypherDataInitVector(cypherdata, config);
+  const initVectorToken = getCypherDataInitVectorByConfig(cypherdata, config);
   const initVector = Buffer.from(initVectorToken, config.outputEncoding);
-  const cypgherContent = getCypherData(cypherdata, config);
+  const cypgherContent = getCypherDataByConfig(cypherdata, config);
   const decipher = createDecipheriv(config.algorithm, keyBuffer, initVector);
   const deciphered = decipher.update(
     cypgherContent,
@@ -62,9 +82,13 @@ export const decypherData = (
   return JSON.parse(decipheredFinal);
 };
 
-export const getCypherDataInitVector = (
+export const getCypherDataInitVector = (cypherdata: string) => {
+  return getCypherDataInitVectorByConfig(cypherdata);
+};
+
+export const getCypherDataInitVectorByConfig = (
   cypherdata: string,
-  configObj: ICypherConfigInput | undefined = defaultCyperConfig
+  configObj: ICypherConfigInput = defaultCyperConfig
 ) => {
   const config = getCypherDataConfig(configObj);
   if (!cypherdata)
@@ -80,7 +104,10 @@ export const getCypherDataInitVector = (
   return splittedCypherData[0];
 };
 
-export const getCypherData = (
+export const getCypherData = (cypherdata: string) => {
+  return getCypherDataByConfig(cypherdata);
+};
+export const getCypherDataByConfig = (
   cypherdata: string,
   configObj: ICypherConfigInput | undefined = defaultCyperConfig
 ) => {
