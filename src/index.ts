@@ -1,1 +1,4 @@
-console.log("tsc added!");
+/**
+ * @module Shared Services
+ */
+export * from "./services/CypherService";
