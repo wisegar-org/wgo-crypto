@@ -1,7 +1,7 @@
 {
   "name": "@wisegar-org/wgo-crypto",
   "version": "0.0.1-build.6",
-  "description": "WGO Module Template",
+  "description": "WGO Crypto Module",
   "main": "build/index.js",
   "scripts": {
     "start": "nodemon",
@@ -33,7 +33,5 @@
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
   },
-  "dependencies": {
-    "@wisegar-org/wgo-settings": "0.0.1-build.8"
-  }
+  "dependencies": {}
 }

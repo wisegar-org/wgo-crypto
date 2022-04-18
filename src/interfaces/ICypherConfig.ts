@@ -9,7 +9,7 @@ export interface ICypherConfig {
   initVetorDataSeparator: string;
 }
 
-export interface ICypherConfiInput {
+export interface ICypherConfigInput {
   algorithm?: string;
   bufferEncoding?: BufferEncoding;
   randomBytesSize?: number;
