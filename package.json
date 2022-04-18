@@ -1,6 +1,6 @@
 {
   "name": "@wisegar-org/wgo-crypto",
-  "version": "0.0.1-build.6",
+  "version": "0.0.1-build.7",
   "description": "WGO Crypto Module",
   "main": "build/index.js",
   "scripts": {
