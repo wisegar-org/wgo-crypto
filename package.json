@@ -1,6 +1,6 @@
 {
   "name": "wgo-crypto",
-  "version": "0.0.1-build.7",
+  "version": "0.0.2",
   "description": "WGO Crypto Module",
   "main": "build/index.js",
   "scripts": {
