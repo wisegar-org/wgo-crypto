@@ -3,6 +3,9 @@
   "version": "0.0.3",
   "description": "WGO Crypto Module",
   "main": "build/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "start": "nodemon",
     "build": "npx rimraf ./build && tsc",
